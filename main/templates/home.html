@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dars-2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background:
+                linear-gradient(rgba(10, 15, 40, 0.25), rgba(10, 15, 40, 0.45)),
+                url("{% static 'images/mountains.png' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 28px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: clamp(65px, 9vw, 140px);
+            line-height: 1;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.35);
+        }
+
+        .content h2 {
+            font-size: clamp(24px, 3vw, 40px);
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: linear-gradient(135deg, #7048ff, #5633ff);
+        }
+
+        .secondary {
+            border: 2px solid white;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .scroll span {
+            display: block;
+            font-size: 28px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 700px) {
+            .menu {
+                display: none;
+            }
+
+            .content h1 {
+                font-size: 60px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            .content p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <nav class="navbar">
+        <div class="logo">Dars-2</div>
+
+        <div class="menu">
+            <a href="#">Bosh sahifa</a>
+            <a href="#">Loyihalar</a>
+            <a href="#">Blog</a>
+            <a href="#">Biz haqimizda</a>
+            <a href="#">Kontakt</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Hush kelibsiz!</h1>
+        <h2>Dars-2 loyihasiga xush kelibsiz.</h2>
+        <p>Yangi bilimlar sari birga!</p>
+
+        <div class="buttons">
+            <a href="#" class="btn primary">▣ &nbsp; Boshlash</a>
+            <a href="#" class="btn secondary">Batafsil &nbsp; →</a>
+        </div>
+    </div>
+
+    <div class="scroll">
+        Quyiga scroll qiling
+        <span>⌄</span>
+    </div>
+
+</section>
+
+</body>
+</html>
