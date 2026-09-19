@@ -12,6 +12,8 @@ def home(request):
 
 
 def project_create(request):
+    if not request.user.is_staff:
+        return redirect("/")
     if request.method == "POST":
         form = ProjectForm(request.POST)
 
@@ -25,6 +27,8 @@ def project_create(request):
 
 
 def project_update(request, pk):
+    if not request.user.is_staff:
+        return redirect("/")
     project = get_object_or_404(Project, pk=pk)
 
     if request.method == "POST":
@@ -39,6 +43,8 @@ def project_update(request, pk):
     return render(request, "project_update.html", {"form": form})
 
 def project_delete(request, pk):
+    if not request.user.is_staff:
+        return redirect("/")
     project = get_object_or_404(Project, pk=pk)
     project.delete()
     return redirect("/")
